@@ -1,9 +1,26 @@
+import matrix.*
 
 
-describe "group of tests " {
 
-  test "test 01" {
-    assert.equals(100, 50+50)
-  }
 
+
+
+test "Cambia la vitalidad"{
+  neo.recuperaSuEnergia()
+  neo.saltar()
+  assert.equals(5, neo.vitalidad())
+}
+
+test "Cantidad de pasajeros en la nave al inicio" {
+  const pasajeros = #{neo,morfeo,trinity}
+  assert.equals(3, nave.cuantosPasajerosHay())
+}
+
+test "Neo tiene la mayor vitalidad inicialmente" {
+  neo.recuperaSuEnergia()
+  assert.equals (neo, nave.pasajeroMayorVitalidad())
+}
+
+test "La nave no está equilibrada al inicio" {
+  assert.notThat ( nave.estaEquilibrada())
 }
